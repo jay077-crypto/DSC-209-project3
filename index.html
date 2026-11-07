@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Protein Detectives</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <nav class="chart-nav" aria-label="Chart navigation">
+    <p class="chart-nav-title">Charts</p>
+    <ol>
+      <li>
+        <a href="#graph1">
+          <span class="chart-nav-number" aria-hidden="true">1</span>
+          <span class="chart-nav-label">Calories vs. Protein</span>
+        </a>
+      </li>
+      <li>
+        <a href="#graph2">
+          <span class="chart-nav-number" aria-hidden="true">2</span>
+          <span class="chart-nav-label">Top 10 by Protein Density</span>
+        </a>
+      </li>
+      <li>
+        <a href="#graph3">
+          <span class="chart-nav-number" aria-hidden="true">3</span>
+          <span class="chart-nav-label">Protein Density by Chain</span>
+        </a>
+      </li>
+      <li>
+        <a href="#graph4">
+          <span class="chart-nav-number" aria-hidden="true">4</span>
+          <span class="chart-nav-label">Protein by Calorie Range</span>
+        </a>
+      </li>
+      <li>
+        <a href="#graph5">
+          <span class="chart-nav-number" aria-hidden="true">5</span>
+          <span class="chart-nav-label">Calories by Macronutrient</span>
+        </a>
+      </li>
+      <li>
+        <a href="#graph6">
+          <span class="chart-nav-number" aria-hidden="true">6</span>
+          <span class="chart-nav-label">Protein vs. Sodium</span>
+        </a>
+      </li>
+    </ol>
+    <div class="chart-nav-footer">
+      <a href="#write-up">
+      <span class="chart-nav-number" aria-hidden="true">W</span>
+      <span class="chart-nav-label">Project Write-up</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="project-page">
+    <header class="project-intro">
+      <p class="project-label">The Protein Detectives · DSC 209R · Project 3</p>
+      <h1>Same Calories, More Protein?</h1>
+      <p class="research-question">
+        A comparison of menus from eight fast-food chains
+      </p>
+      <p>
+        Explore how much protein menu items provide at similar calorie levels, see which items offer the most grams of protein per 100 kcal.
+      </p>
+      <p class="team-members">Wending He, Sergio Iribe, Jason Yu, and Mandy Xu</p>
+    </header>
+
+    <section class="project-section" id="explore">
+      <h2>Explore the Menu</h2>
+      <p>We produced 6 different graphs to help us better understand and explore the nutritional value of different fast food items across the 8 restaurants. </p>
+
+      <div class="charts">
+        <article class="chart">
+          <div id="graph1"></div>
+          <p class="chart-note">
+            Click a chain in the legend to isolate its items. Click it again
+            to show all chains. Hover over a point for item details.
+          </p>
+          <p>
+            <summary>Design Notes</summary>
+            <p>Graph 1 introduces us to the topic by simply plotting how the amount of protein and calories interact with each other on a scatterplot. Each data point’s color is determined by the restaurant, as shown in the legend to the right. Since most points are clustered in the lower left corner, we lowered the opacity. We also used a pretty muted color palette so the plot wouldn’t be too overwhelming. The interactive feature allows users to hover over individual points to view the item’s name, calorie and protein amount, and protein density (g/kCal). Users can also interact with the legend to only display the chosen restaurant. </p>
+          </p>
+        </article>
+
+        <article class="chart">
+          <div id="graph2"></div>
+          <p class="chart-note">
+            The ranking covers all eight chains. Hover over a bar to see
+            the item's nutrition details.
+          </p>
+          <p>
+            <summary>Design Notes</summary>
+            <p>Graph 2 dives deeper into the data by exploring exactly which food menu items have the highest protein-to-calorie ratio. The data is ordered in descending order so we can easily see that the top 4 items all come from Chick-Fil-A (orange). We chose a horizontal bar chart to better visualize the descending values and keep the menu item labels readable (as opposed to having them on the x-axis). Similar to graph 1, users can interact with the plot by hovering over each bar to view the basic nutritional information of the menu item.</p>
+          </p>
+        </article>
+
+        <article class="chart">
+          <div id="graph3"></div>
+          <p class="chart-note">
+            Hover over a box to see the chain's summary statistics or over
+            a point to see an individual item's protein density.
+          </p>
+          <p>
+            <summary>Design Notes</summary>
+            <p>Graph 3 illustrates the distribution of protein density across the eight restaurants using side-by-side box-and-whisker plots. This visualization makes it easy to compare the protein density of menu items across restaurants, revealing that Chick-fil-A has the widest distribution, while Taco Bell has the narrowest. We keep the same color palette used throughout the 6 plots to maintain consistency. Users can hover over individual points to view the item’s nutritional information or individual bars to get an overview of the distribution.</p>
+          </p>
+        </article>
+
+        <article class="chart">
+          <div id="graph4"></div>
+          <p class="chart-note">
+            Darker cells show higher average protein in grams. Select a
+            calorie range to rank the chains within that range. A dash means
+            the dataset contains no qualifying items for that chain and range.
+          </p>
+          <p>
+            <summary>Design Notes</summary>
+            <p>Graph 4 explores the average protein content of restaurants across different calorie bins. Darker shades of blue represent higher protein density, while lighter shades indicate lower protein density, drawing the audience’s attention to items with the highest protein density. There’s also a dropdown menu that filters to the selected calorie bin.</p>
+          </p>
+        </article>
+
+        <article class="chart">
+          <div id="graph5"></div>
+          <p class="chart-note">
+            Each bar shows the shares of estimated energy from protein,
+            carbohydrates, and fat. Hover over a segment to reveal that
+            nutrient's share across the chains.
+          </p>
+          <p>
+            <summary>Design Notes</summary>
+            <p>Graph 5 shows the proportional caloric contribution of protein, carbohydrates, and fat across restaurants using a stacked bar chart. Each bar represents the total caloric composition of a restaurant, with each stack showing the percentage of calories derived from each macronutrient. Calories are normalized using the formula: (Protein x 4) + (Carbohydrates x 4) + (Fat x 9). Colors are chosen to be very distinct from each other to avoid any miscommunication. This visualization makes it easier to compare the macronutrient composition across restaurants regardless of differences in total calorie content. Hovering over each color displays the percentage of those bars across restaurants.</p>
+          </p>
+        </article>
+
+        <article class="chart">
+          <div id="graph6"></div>
+          <p class="chart-note">
+            Each point represents a menu item. Larger points indicate more
+            total calories. Hover for protein and sodium density, or click
+            a chain in the legend to isolate its items.
+          </p>
+          <p>
+            <summary>Design Notes</summary>
+            <p>Graph 6 compares the protein and sodium density of menu items using a scatterplot. Similar to graph 1, the opacity is lowered as points are clustered at 5g/100cal and 250mg/100cal. We also adjusted the size of each point to represent the item’s calories. The larger the point, the more calories. Instead of adding a full grid which adds clutter to the graph, a single cross-section is plotted to better highlight the center of the cluster. The same interactive features are applied from graph 1.</p>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-section" id="write-up">
+      <h2>Project Write-up</h2>
+
+      <p>This project explores the nutritional information of fast food menu items across eight different restaurant chains. Our main focus is comparing the amount of protein each item provides relative to its total calories. We are investigating whether certain restaurants offer more protein-efficient options.</p>
+
+      <h3 id="data-methods">Dataset and Data Processing</h3>
+
+      <p>We used the <a href="https://www.openintro.org/data/index.php?data=fastfood">Nutrition in Fast Food</a> dataset. It contains 515 fast food menu items across 8 different restaurants–McDonalds, Chick-Fil-A, Sonic, Arby’s, Burger King, Dairy Queen, Subway, and Taco Bell. There are 17 columns covering calories, protein, fat, sodium, sugar, and other nutritional information. We focused primarily on the protein and calorie columns but also explored other columns such as fat and sodium.</p>
+
+      <p>The dataset itself is fairly clean and didn’t warrant too much data wrangling. However, to better answer our question, we had to perform a few data transformations, including calculating grams of protein per 100 calories, average grams of protein by restaurant, mg of sodium per 100 calories, and calorie bins. Displaying per 100 calories allowed us to standardize the data and better compare nutritional value across different restaurants. </p>
+
+      <h3>Development Process</h3>
+
+      <p>We all spent time looking for a dataset and eventually all voted on Nutrition in Fast Food. We found it to be well scoped for this project’s timeframe and an interesting question to answer. Wending worked on the project checkpoint recording and base graphs for the final submission. Sergio worked on the project checkpoint script and added the interaction features to the final graph. Jason worked on the project checkpoint graphs and the GitHub pages deployment. Mandy worked on the final project writeup.</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
